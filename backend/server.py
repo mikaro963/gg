@@ -38,9 +38,13 @@ api_router = APIRouter(prefix="/api")
 
 # ============= Models =============
 class UserCreate(BaseModel):
+    first_name: str
+    last_name: str
     email: EmailStr
     password: str
-    name: str
+    birth_date: str
+    phone: str
+    country_code: str
     language: Literal["ar", "en"] = "ar"
 
 class UserLogin(BaseModel):
@@ -51,13 +55,25 @@ class User(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     email: EmailStr
-    name: str
+    first_name: str
+    last_name: str
+    birth_date: Optional[str] = None
+    phone: Optional[str] = None
+    country_code: Optional[str] = None
     role: Literal["user", "admin"] = "user"
     language: str = "ar"
+    email_verified: bool = False
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class UserInDB(User):
     password_hash: str
+
+class SendOTPRequest(BaseModel):
+    email: EmailStr
+
+class VerifyOTPRequest(BaseModel):
+    email: EmailStr
+    otp: str
 
 class Token(BaseModel):
     access_token: str
