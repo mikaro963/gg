@@ -57,7 +57,7 @@ const LandingNew = () => {
             <h1 className="text-2xl font-bold text-white hidden sm:block">Cash Wallet</h1>
           </div>
           <div className="flex gap-3">
-            <LanguageSwitcher />
+            <LanguageSwitcherDropdown />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
