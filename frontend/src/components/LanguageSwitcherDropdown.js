@@ -21,10 +21,10 @@ const LanguageSwitcherDropdown = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2.5 bg-[#1a1a1a] border border-gray-700 text-white rounded-xl hover:border-emerald-500/50 transition-all duration-200 font-semibold text-sm flex items-center gap-2 min-w-[120px]"
+        className="px-4 py-2.5 bg-[#1a1a1a] border border-gray-700 text-white rounded-xl hover:border-emerald-500/50 transition-all duration-200 font-semibold text-sm flex items-center gap-2 min-w-[120px] relative z-50"
       >
         <span className="text-lg">{currentLanguage.flag}</span>
         <span className="flex-1 text-left">{currentLanguage.name}</span>
