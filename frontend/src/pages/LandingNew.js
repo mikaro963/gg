@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import LanguageSwitcherDropdown from '../components/LanguageSwitcherDropdown';
 
 const LandingNew = () => {
   const { t, i18n } = useTranslation();
