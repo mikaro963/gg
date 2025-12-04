@@ -11,8 +11,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import LanguageSwitcherDropdown from '../components/LanguageSwitcherDropdown';
 import axios from 'axios';
 
-// Use Railway API
-const BACKEND_URL = 'https://proactive-youthfulness-production-6422.up.railway.app';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const passwordRequirements = [
