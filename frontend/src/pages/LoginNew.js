@@ -41,7 +41,7 @@ const LoginNew = () => {
 
       {/* Language Switcher */}
       <div className="absolute top-6 right-6 z-20">
-        <LanguageSwitcher />
+        <LanguageSwitcherDropdown />
       </div>
 
       <div className="relative z-10 w-full max-w-md">
