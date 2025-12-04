@@ -8,7 +8,7 @@ import './App.css';
 // Pages
 import Landing from './pages/Landing';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import RegisterNew from './pages/RegisterNew';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 
