@@ -43,7 +43,7 @@ const LanguageSwitcherDropdown = () => {
           <>
             {/* Backdrop */}
             <div 
-              className="fixed inset-0 z-40" 
+              className="fixed inset-0 z-[100]" 
               onClick={() => setIsOpen(false)}
             />
 
@@ -53,7 +53,7 @@ const LanguageSwitcherDropdown = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full mt-2 right-0 w-48 bg-[#1a1a1a] border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-50 backdrop-blur-xl"
+              className="absolute top-full mt-2 right-0 w-48 bg-[#1a1a1a] border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-[110] backdrop-blur-xl"
             >
               {languages.map((lang) => (
                 <button
