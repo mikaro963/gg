@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+// Use Railway API for production
+const BACKEND_URL = 'https://proactive-youthfulness-production-6422.up.railway.app';
 const API = `${BACKEND_URL}/api`;
 
 export const AuthProvider = ({ children }) => {
