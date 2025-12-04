@@ -42,6 +42,7 @@ const AppRoutes = () => {
       <Route path="/" element={<LandingNew />} />
       <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <LoginNew />} />
       <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <RegisterAdvanced />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route
         path="/dashboard"
         element={
