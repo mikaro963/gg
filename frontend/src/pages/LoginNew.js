@@ -179,7 +179,7 @@ const LoginNew = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mt-8 text-center"
+            className="mt-8 text-center space-y-3"
           >
             <p className="text-gray-400">
               {t('dontHaveAccount')}{' '}
@@ -187,6 +187,9 @@ const LoginNew = () => {
                 {t('register')}
               </Link>
             </p>
+            <Link to="/forgot-password" className="block text-gray-500 hover:text-emerald-400 text-sm transition-colors">
+              {i18n.language === 'ar' ? 'نسيت كلمة المرور؟' : 'Forgot Password?'}
+            </Link>
           </motion.div>
 
           {/* Back to Home */}
