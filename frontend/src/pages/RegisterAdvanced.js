@@ -78,29 +78,19 @@ const RegisterAdvanced = () => {
   };
 
   const handleSendOTP = async () => {
-    if (!email || !password || !phone) {
-      setError(i18n.language === 'ar' ? 'الرجاء ملء جميع الحقول المطلوبة' : 'Please fill all required fields');
+    if (!email) {
+      setError(i18n.language === 'ar' ? 'الرجاء إدخال البريد الإلكتروني' : 'Please enter email');
       return;
     }
     
     setLoading(true);
     try {
-      // Call register endpoint which sends OTP
-      const response = await axios.post(`${API}/register`, {
-        email,
-        password,
-        phone
-      });
-      
-      if (response.data.success) {
-        setOtpSent(true);
-        setGeneratedOtp(response.data.debugOtp); // For testing
-        setError('');
-      } else {
-        setError(response.data.message || 'Failed to send OTP');
-      }
+      const response = await axios.post(`${API}/auth/send-otp`, { email });
+      setOtpSent(true);
+      setGeneratedOtp(response.data.otp);
+      setError('');
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to send OTP');
+      setError(err.response?.data?.detail || 'Failed to send OTP');
     } finally {
       setLoading(false);
     }
