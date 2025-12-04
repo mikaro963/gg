@@ -142,7 +142,8 @@ const RegisterAdvanced = () => {
     );
     
     if (result.success) {
-      navigate('/dashboard');
+      // Registration successful, now login
+      navigate('/login');
     } else {
       setError(result.error);
     }
