@@ -235,11 +235,14 @@ const LandingNew = () => {
       {/* Footer */}
       <footer className="relative z-10 border-t border-gray-800 bg-[#0a0a0a]/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
               <span className="text-gray-400 text-sm">© 2025 Cash Wallet. All rights reserved.</span>
             </div>
+            
+            <SocialLinks />
+            
             <div className="flex gap-6 text-gray-400 text-sm">
               <a href="#" className="hover:text-emerald-400 transition-colors">Privacy</a>
               <a href="#" className="hover:text-emerald-400 transition-colors">Terms</a>
