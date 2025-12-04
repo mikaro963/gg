@@ -413,7 +413,7 @@ const RegisterAdvanced = () => {
                 </motion.div>
               )}
 
-              {/* Step 2: Additional Details */}
+              {/* Step 2: Birth Date */}
               {step === 2 && (
                 <motion.div
                   key="step2"
@@ -441,20 +441,6 @@ const RegisterAdvanced = () => {
                     />
                   </div>
 
-                  {/* Phone Number */}
-                  <div>
-                    <label className="block text-gray-300 mb-2 font-semibold text-sm">
-                      {i18n.language === 'ar' ? 'رقم الهاتف' : 'Phone Number'}
-                    </label>
-                    <PhoneInput
-                      international
-                      defaultCountry="SY"
-                      value={phone}
-                      onChange={setPhone}
-                      className="phone-input-custom"
-                    />
-                  </div>
-
                   <div className="flex gap-3">
                     <button
                       type="button"
@@ -475,7 +461,7 @@ const RegisterAdvanced = () => {
                 </motion.div>
               )}
 
-              {/* Step 3: Password */}
+              {/* Step 3: Confirm Password */}
               {step === 3 && (
                 <motion.div
                   key="step3"
