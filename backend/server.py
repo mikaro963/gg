@@ -351,10 +351,12 @@ async def init_admin():
     
     admin = UserInDB(
         email="admin@cashwallet.com",
-        name="Admin",
+        first_name="Admin",
+        last_name="User",
         password_hash=get_password_hash("admin123"),
         role="admin",
-        language="ar"
+        language="ar",
+        email_verified=True
     )
     
     admin_dict = admin.model_dump()
