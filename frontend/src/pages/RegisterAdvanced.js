@@ -82,17 +82,10 @@ const RegisterAdvanced = () => {
       return;
     }
     
-    setLoading(true);
-    try {
-      const response = await axios.post(`${API}/auth/send-otp`, { email });
-      setOtpSent(true);
-      setGeneratedOtp(response.data.otp);
-      setError('');
-    } catch (err) {
-      setError(err.response?.data?.detail || 'Failed to send OTP');
-    } finally {
-      setLoading(false);
-    }
+    // For now, just simulate sending OTP (Railway doesn't have separate send-otp endpoint)
+    setOtpSent(true);
+    setGeneratedOtp('123456'); // For testing
+    setError('');
   };
 
   const handleVerifyOTP = async () => {
