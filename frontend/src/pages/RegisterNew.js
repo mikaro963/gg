@@ -157,6 +157,7 @@ const RegisterNew = () => {
       </div>
       
       <div className="max-w-2xl w-full bg-[#1a1a1a] p-8 rounded-2xl border border-gray-800 shadow-2xl">
+        <img src="/logo.png" alt="Cash Wallet Logo" className="h-16 w-auto mx-auto mb-6" />
         <h2 className="text-3xl font-bold text-white text-center mb-8">{t('register')}</h2>
         
         {generatedOtp && (
