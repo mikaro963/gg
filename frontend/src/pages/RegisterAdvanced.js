@@ -79,15 +79,32 @@ const RegisterAdvanced = () => {
   };
 
   const handleSendOTP = async () => {
-    if (!email) {
-      setError(i18n.language === 'ar' ? 'الرجاء إدخال البريد الإلكتروني' : 'Please enter email');
+    if (!email || !password || !phone) {
+      setError(i18n.language === 'ar' ? 'الرجاء ملء جميع الحقول المطلوبة' : 'Please fill all required fields');
       return;
     }
     
-    // For now, just simulate sending OTP (Railway doesn't have separate send-otp endpoint)
-    setOtpSent(true);
-    setGeneratedOtp('123456'); // For testing
-    setError('');
+    setLoading(true);
+    try {
+      // Call register endpoint which sends OTP
+      const response = await axios.post(`${API}/register`, {
+        email,
+        password,
+        phone
+      });
+      
+      if (response.data.success) {
+        setOtpSent(true);
+        setGeneratedOtp(response.data.debugOtp); // For testing
+        setError('');
+      } else {
+        setError(response.data.message || 'Failed to send OTP');
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'Failed to send OTP');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleVerifyOTP = async () => {
