@@ -8,7 +8,7 @@ import PhoneInput from 'react-phone-number-input';
 import DatePicker from 'react-datepicker';
 import 'react-phone-number-input/style.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import LanguageSwitcherDropdown from '../components/LanguageSwitcherDropdown';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
