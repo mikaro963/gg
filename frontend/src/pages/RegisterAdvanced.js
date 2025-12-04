@@ -99,20 +99,12 @@ const RegisterAdvanced = () => {
   const handleVerifyOTP = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(`${API}/verify-otp`, { 
-        email, 
-        code: otp 
-      });
-      
-      if (response.data.success) {
-        setEmailVerified(true);
-        setError('');
-        setStep(2);
-      } else {
-        setError(response.data.message || 'Invalid OTP');
-      }
+      await axios.post(`${API}/auth/verify-otp`, { email, otp });
+      setEmailVerified(true);
+      setError('');
+      setStep(2);
     } catch (err) {
-      setError(err.response?.data?.message || 'Invalid OTP');
+      setError(err.response?.data?.detail || 'Invalid OTP');
     } finally {
       setLoading(false);
     }
