@@ -6,9 +6,9 @@ import './i18n';
 import './App.css';
 
 // Pages
-import Landing from './pages/Landing';
-import Login from './pages/Login';
-import RegisterNew from './pages/RegisterNew';
+import LandingNew from './pages/LandingNew';
+import LoginNew from './pages/LoginNew';
+import RegisterAdvanced from './pages/RegisterAdvanced';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 
