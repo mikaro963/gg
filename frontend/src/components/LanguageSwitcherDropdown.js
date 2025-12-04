@@ -13,13 +13,12 @@ const LanguageSwitcherDropdown = () => {
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
-  const changeLanguage = (code) => {
-    i18n.changeLanguage(code);
+  const changeLanguage = async (code) => {
+    await i18n.changeLanguage(code);
     localStorage.setItem('i18nextLng', code);
     document.documentElement.dir = code === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = code;
     setIsOpen(false);
-    window.location.reload(); // Force reload to apply changes
   };
 
   return (
