@@ -370,7 +370,7 @@ const RegisterAdvanced = () => {
                 </motion.div>
               )}
 
-              {/* Step 2: Birth Date */}
+              {/* Step 2: Additional Details */}
               {step === 2 && (
                 <motion.div
                   key="step2"
@@ -395,6 +395,20 @@ const RegisterAdvanced = () => {
                       placeholderText={i18n.language === 'ar' ? 'اختر تاريخ الميلاد' : 'Select birth date'}
                       className="w-full px-4 py-4 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                       wrapperClassName="w-full"
+                    />
+                  </div>
+
+                  {/* Phone Number */}
+                  <div>
+                    <label className="block text-gray-300 mb-2 font-semibold text-sm">
+                      {i18n.language === 'ar' ? 'رقم الهاتف' : 'Phone Number'}
+                    </label>
+                    <PhoneInput
+                      international
+                      defaultCountry="SY"
+                      value={phone}
+                      onChange={setPhone}
+                      className="phone-input-custom"
                     />
                   </div>
 
