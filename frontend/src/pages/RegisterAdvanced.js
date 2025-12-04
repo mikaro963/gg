@@ -148,26 +148,8 @@ const RegisterAdvanced = () => {
       return;
     }
 
-    setLoading(true);
-    const result = await register(
-      firstName,
-      email,
-      password,
-      i18n.language,
-      lastName,
-      birthDate ? birthDate.toISOString().split('T')[0] : '',
-      phone || '',
-      ''
-    );
-    
-    if (result.success) {
-      // Registration successful, now login
-      navigate('/login');
-    } else {
-      setError(result.error);
-    }
-    
-    setLoading(false);
+    // Account is already registered and verified, just navigate to login
+    navigate('/login');
   };
 
   const canProceedToStep2 = firstName && lastName && email && emailVerified;
