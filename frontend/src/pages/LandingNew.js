@@ -102,24 +102,14 @@ const LandingNew = () => {
                 {t('heroSubtitle')}
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(16, 185, 129, 0.4)' }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/register')}
-                  className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-xl text-lg font-semibold shadow-xl shadow-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300"
-                >
-                  {t('getStarted')} →
-                </motion.button>
-                
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white/5 border border-gray-700 text-white rounded-xl text-lg font-semibold backdrop-blur-sm hover:bg-white/10 hover:border-gray-600 transition-all duration-300"
-                >
-                  {i18n.language === 'ar' ? 'المزيد من المعلومات' : 'Learn More'}
-                </motion.button>
-              </div>
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(16, 185, 129, 0.4)' }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/register')}
+                className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-xl text-lg font-semibold shadow-xl shadow-emerald-500/30 hover:shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 inline-block"
+              >
+                {t('getStarted')} →
+              </motion.button>
 
               {/* Stats */}
               <motion.div variants={itemVariants} className="mt-12 grid grid-cols-3 gap-6">
