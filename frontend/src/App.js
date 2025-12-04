@@ -38,9 +38,9 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login />} />
-      <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <RegisterNew />} />
+      <Route path="/" element={<LandingNew />} />
+      <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <LoginNew />} />
+      <Route path="/register" element={user ? <Navigate to="/dashboard" /> : <RegisterAdvanced />} />
       <Route
         path="/dashboard"
         element={
