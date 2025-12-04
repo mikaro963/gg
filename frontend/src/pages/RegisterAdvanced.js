@@ -454,6 +454,8 @@ const RegisterAdvanced = () => {
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        onFocus={() => setPasswordFocused(true)}
+                        onBlur={() => setPasswordFocused(false)}
                         className="w-full px-4 py-4 pr-14 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                         placeholder={i18n.language === 'ar' ? 'أدخل كلمة المرور' : 'Enter password'}
                         required
