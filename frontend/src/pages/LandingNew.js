@@ -126,26 +126,15 @@ const LandingNew = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Image */}
+            {/* Right Image - Slider */}
             <motion.div 
               variants={itemVariants}
               className={`relative ${isRTL ? 'lg:order-1' : ''}`}
             >
               <div className="relative">
-                <motion.div
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="relative z-10"
-                >
-                  <img src="/hero.png" alt="Hero" className="w-full h-auto drop-shadow-2xl" />
-                </motion.div>
+                <div className="relative z-10 rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+                  <img src="/slider.png" alt="Platform Preview" className="w-full h-auto" />
+                </div>
                 
                 {/* Decorative Elements */}
                 <div className="absolute -top-10 -left-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl" />
