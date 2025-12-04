@@ -11,7 +11,10 @@ const Landing = () => {
     <div className="min-h-screen bg-[#0a0a0a]">
       {/* Header */}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-white">Cash Wallet</h1>
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt="Cash Wallet Logo" className="h-10 w-auto" />
+          <h1 className="text-2xl font-bold text-white">Cash Wallet</h1>
+        </div>
         <div className="flex gap-4">
           <LanguageSwitcher />
           <button
@@ -26,9 +29,7 @@ const Landing = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="w-24 h-24 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
-            <span className="text-white text-4xl font-bold">W</span>
-          </div>
+          <img src="/logo.png" alt="Cash Wallet Logo" className="h-32 w-auto mx-auto mb-8" />
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             {t('heroTitle')}
           </h2>

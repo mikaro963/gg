@@ -53,7 +53,10 @@ const UserDashboard = () => {
       {/* Header */}
       <header className="bg-[#1a1a1a] border-b border-gray-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white">Cash Wallet</h1>
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="Cash Wallet Logo" className="h-8 w-auto" />
+            <h1 className="text-2xl font-bold text-white">Cash Wallet</h1>
+          </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-300">{user?.first_name} {user?.last_name}</span>
             <LanguageSwitcher />
