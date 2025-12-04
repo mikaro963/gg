@@ -535,6 +535,8 @@ const RegisterAdvanced = () => {
                         type={showConfirmPassword ? 'text' : 'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
+                        onFocus={() => setConfirmPasswordFocused(true)}
+                        onBlur={() => setConfirmPasswordFocused(false)}
                         className="w-full px-4 py-4 pr-14 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                         placeholder={i18n.language === 'ar' ? 'أعد إدخال كلمة المرور' : 'Re-enter password'}
                         required
