@@ -150,8 +150,8 @@ const RegisterAdvanced = () => {
     setLoading(false);
   };
 
-  const canProceedToStep2 = firstName && lastName && email && emailVerified && phone && password;
-  const canProceedToStep3 = birthDate;
+  const canProceedToStep2 = firstName && lastName && email && emailVerified;
+  const canProceedToStep3 = birthDate && phone;
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] relative overflow-hidden flex items-center justify-center px-4 py-8">
