@@ -59,7 +59,7 @@ const UserDashboard = () => {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-300">{user?.first_name} {user?.last_name}</span>
-            <LanguageSwitcher />
+            <LanguageSwitcherDropdown />
             <button
               onClick={handleLogout}
               className="px-4 py-2 bg-red-500/20 text-red-300 rounded-lg hover:bg-red-500/30 transition-all duration-200 font-semibold border border-red-500/30"
