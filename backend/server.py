@@ -145,6 +145,40 @@ async def get_current_admin(current_user: User = Depends(get_current_user)):
 
 
 # ============= Auth Routes =============
+@api_router.post("/auth/send-otp")
+async def send_otp(request: SendOTPRequest):
+    # Generate OTP (6 digits)
+    otp = str(uuid.uuid4().int)[:6]
+    
+    # Store OTP in database with 10 min expiry
+    otp_doc = {
+        "email": request.email,
+        "otp": otp,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "expires_at": (datetime.now(timezone.utc) + timedelta(minutes=10)).isoformat()
+    }
+    await db.otp_codes.delete_many({"email": request.email})  # Remove old OTPs
+    await db.otp_codes.insert_one(otp_doc)
+    
+    # In production, send email here
+    # For now, return OTP for testing
+    return {"message": "OTP sent successfully", "otp": otp}
+
+@api_router.post("/auth/verify-otp")
+async def verify_otp(request: VerifyOTPRequest):
+    otp_doc = await db.otp_codes.find_one({"email": request.email, "otp": request.otp})
+    
+    if not otp_doc:
+        raise HTTPException(status_code=400, detail="Invalid OTP")
+    
+    expires_at = datetime.fromisoformat(otp_doc['expires_at'])
+    if datetime.now(timezone.utc) > expires_at:
+        raise HTTPException(status_code=400, detail="OTP expired")
+    
+    # Mark as verified
+    await db.otp_codes.delete_one({"email": request.email})
+    return {"message": "Email verified successfully"}
+
 @api_router.post("/auth/register", response_model=Token)
 async def register(user_data: UserCreate):
     # Check if user exists
@@ -155,10 +189,15 @@ async def register(user_data: UserCreate):
     # Create user
     user = UserInDB(
         email=user_data.email,
-        name=user_data.name,
+        first_name=user_data.first_name,
+        last_name=user_data.last_name,
+        birth_date=user_data.birth_date,
+        phone=user_data.phone,
+        country_code=user_data.country_code,
         password_hash=get_password_hash(user_data.password),
         language=user_data.language,
-        role="user"
+        role="user",
+        email_verified=True
     )
     
     user_dict = user.model_dump()
