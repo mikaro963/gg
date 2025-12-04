@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import LanguageSwitcherDropdown from '../components/LanguageSwitcherDropdown';
 
 const LoginNew = () => {
   const { t, i18n } = useTranslation();
