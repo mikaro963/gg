@@ -129,8 +129,25 @@ const RegisterAdvanced = () => {
       return;
     }
 
-    // Account is already registered and verified, just navigate to login
-    navigate('/login');
+    setLoading(true);
+    const result = await register(
+      firstName,
+      email,
+      password,
+      i18n.language,
+      lastName,
+      birthDate ? birthDate.toISOString().split('T')[0] : '',
+      phone || '',
+      ''
+    );
+    
+    if (result.success) {
+      navigate('/dashboard');
+    } else {
+      setError(result.error);
+    }
+    
+    setLoading(false);
   };
 
   const canProceedToStep2 = firstName && lastName && email && emailVerified && phone && password;
