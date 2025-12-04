@@ -9,6 +9,7 @@ import './App.css';
 import LandingNew from './pages/LandingNew';
 import LoginNew from './pages/LoginNew';
 import RegisterAdvanced from './pages/RegisterAdvanced';
+import ForgotPassword from './pages/ForgotPassword';
 import UserDashboard from './pages/UserDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 
